@@ -1,0 +1,66 @@
+\documentclass{uebungsblatt}
+\setcounter{aufgabe}{3} 
+\usepackage{amsmath,amssymb}
+%makros
+\newcommand{\R}{{\mathbb R}}
+\newcommand{\Rn}{{\mathbb R^n}}  
+\newenvironment{eqv*}{\begin{equation*}\hfill} {\hfill \end{equation*}} 
+\newenvironment{eqv}{\begin{equation}\hfill} {\hfill \end{equation}}
+\begin{document}
+\section*{Hausaufgaben}
+\begin{aufgabe*}{H33: Schwache Formulierung einer partiellen Differentialgleichung}
+Es sei $\Omega := B(0, \frac 1 2) \subset \R^2$. Gesucht ist ein $u \in V:=H^1_0(\Omega)$, sodass
+$$
+\int_{\Omega} (D_1 u + x_1^2 D_2 u)D_1 v + (x_1^2 D_1 u + D_2 u) D_2 v = \int_{\Omega} \cos(x_1 x_2) v \quad \forall v \in V
+$$
+erfüllt ist. Untersuchen Sie die Aufgabe auf Existenz und Eindeutigkeit.
+
+\end{aufgabe*}
+\begin{aufgabe*}{H34: Die biharmonische Gleichung}
+Es sei $\Omega \subset \Rn$ offen und beschränkt. 
+\begin{teilaufgaben}{a)}
+\teilaufgabe Es sei $H^k_0(\Omega):= \overline{C^{\infty}_0(\Omega)}^{\|\cdot\|_{H^k(\Omega)}}$. Zeigen Sie, dass
+$$
+\|u \|_{H^k_0(\Omega)} := \left(\sum_{|\alpha| = k}  \| D^{\alpha} u \|^2_{L^2(\Omega)} \right)^{\frac 1 2}
+$$
+eine zur $H^k$-Norm äquivalente Norm auf $H^k_0(\Omega)$ definiert.
+\teilaufgabe Zeigen Sie, dass für alle $u \in C^{\infty}_0(\Omega)$ die folgende Gleichung gilt
+$$
+ \int_{\Omega} \! (\Delta u)^2 = \int_{\Omega}  \! |\nabla^2 u|^2.
+ $$
+\teilaufgabe Wir nennen $u \in H^2_0(\Omega)$ die schwache Lösung der \emph{biharmonischen Gleichung}
+$$
+\Delta^2 u = f \quad \text{in }\Omega, \quad u= \frac {\partial}{\partial \nu} u = 0 \text{ auf }\partial \Omega,
+$$
+wenn 
+$$
+\int_{\Omega} \! \Delta u \Delta v = \int_{\Omega} fv \quad \forall v \in H^2_0(\Omega).
+$$
+Zeigen Sie, dass für jedes $f \in L^2(\Omega)$ genau eine schwache Lösung der biharmonischen Gleichung existiert. 
+Dabei wird die in \textbf{b)} bewiesene Gleichung nützlich sein.
+\end{teilaufgaben}
+\end{aufgabe*}
+%%
+\begin{aufgabe*}{H35: Satz von Riesz im reellen Hilbertraum}
+Es sei $\left(H, ( \cdot, \cdot )_H\right)$ ein Hilbertraum über $\R$ und $f \in H^{'}$, d.h., $f: H \rightarrow \R$ ist linear und stetig.
+Zeigen Sie: Dann existiert genau ein $u_f\in H$, sodass
+\begin{eqv}
+(u_f,v)_H = \langle f, v\rangle_{H^{'}\! \!, H}\quad \forall v \in H \label{Riesz}
+\end{eqv}
+gilt.
+
+% Dies ist der Riesz'sche Darstellungssatz.
+%
+Anleitung: Betrachten Sie dass Minimierungsproblem 
+$$
+\min_{v\in H} F(v) := \frac 1 2 \|v\|_H^2 - \langle f,v\rangle_{H^{'}\! \!, H}
+$$
+und eine Minimalfolge, d.h. $v_n \in H$ mit $F(v_n) \rightarrow \inf_{v\in H} F(v) $. Beweisen Sie zunächst, dass
+$$
+F\left(\frac{v_m+v_n}{2} \right) + \frac 1 2 \left \| \frac{v_m - v_n}{2} \right\|^2_H = \frac 1 2 ( F (v_m) + F(v_n))
+$$
+gilt. Was bedeutet das für die Minimalfolge? Danach zeigen Sie die Existenz und Eindeutigkeit des Minimierungsproblems. Schließen Sie dann die Gleichung \eqref{Riesz} aus der notwendigen Bedingung erster Ordnung.
+\end{aufgabe*}
+\vfill
+\centering \textbf{Abgabe:} 5. Februar 2015 
+\end{document}
